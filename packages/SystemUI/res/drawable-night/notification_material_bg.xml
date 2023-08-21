@@ -15,7 +15,7 @@
   ~ limitations under the License
   -->
 
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:androidprv="http://schemas.android.com/apk/prv/res/android"
         android:color="?android:attr/colorControlHighlight">
     <item>
@@ -24,7 +24,7 @@
                 <padding
                     android:left="10dp"
                     android:right="10dp" />
-             <solid android:color="?androidprv:attr/colorSurface" />
+                <solid android:color="?androidprv:attr/colorSurface" />
        </shape>
     </item>
-</layer-list>
+</ripple>

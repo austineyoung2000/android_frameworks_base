@@ -51,4 +51,20 @@
     <color name="side_fps_toast_background">#2E3132</color>
     <color name="side_fps_text_color">#EFF1F2</color>
     <color name="side_fps_button_color">#33B9DB</color>
+
+    <color name="qs_color_button_power">@color/system_neutral1_10</color>
+    <color name="qs_color_button_settings">@color/system_neutral1_10</color>
+    <color name="qs_color_button_brightness">@color/system_neutral1_10</color>
+    <color name="qs_color_text_active">@color/system_neutral1_10</color>
+    <color name="qs_color_text_inactive">@color/system_neutral1_10</color>
+    <color name="qs_color_text_unavailable">@color/system_neutral2_500</color>
+    <color name="qs_color_icon_active">@color/system_neutral1_10</color>
+    <color name="qs_color_icon_inactive">@color/system_neutral1_10</color>
+    <color name="qs_color_icon_unavailable">@color/system_neutral2_500</color>
+    <color name="qs_color_inactive">@color/system_neutral2_800</color>
+    <color name="qs_color_neutral">@color/system_neutral2_600</color>
+    <color name="qs_color_accent_primary">@color/holo_blue_light</color>
+    <color name="qs_color_accent_secondary">@color/holo_green_light</color>
+    <color name="qs_color_accent_custom_primary">@color/system_accent3_400</color>
+    <color name="qs_color_accent_custom_secondary">@color/system_accent3_200</color>
 </resources>

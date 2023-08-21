@@ -15,7 +15,11 @@
   ~ limitations under the License.
   -->
 
-<shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <corners android:radius="@dimen/qs_corner_radius" />
-    <solid android:color="#FFFFFF" />
-</shape>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@*android:id/qs_state_layer">
+        <shape>
+            <solid android:color="@*android:color/qs_color_inactive" />
+            <corners android:radius="@*android:dimen/qs_corner_radius_top" />
+        </shape>
+    </item>
+</layer-list>

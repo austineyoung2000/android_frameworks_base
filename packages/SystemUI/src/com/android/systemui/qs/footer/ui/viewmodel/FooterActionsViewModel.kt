@@ -340,7 +340,6 @@ fun userSwitcherButtonViewModel(
                 ),
             ),
         iconTint = null,
-        backgroundColor = R.attr.shadeInactive,
         onClick = onUserSwitcherClicked,
     )
 }
@@ -366,11 +365,10 @@ fun settingsButtonViewModel(
             ContentDescription.Resource(R.string.accessibility_quick_settings_settings)
         ),
         iconTint =
-            Utils.getColorAttrDefaultColor(
+            Utils.getColorStateListDefaultColor(
                 qsThemedContext,
-                R.attr.onShadeInactiveVariant,
+                R.color.qs_color_button_settings,
             ),
-        backgroundColor = R.attr.shadeInactive,
         onSettingsButtonClicked,
         onSettingsButtonLongClicked,
     )
@@ -383,15 +381,14 @@ fun powerButtonViewModel(
     return FooterActionsButtonViewModel(
         id = R.id.pm_lite,
         Icon.Resource(
-            android.R.drawable.ic_lock_power_off,
-            ContentDescription.Resource(R.string.accessibility_quick_settings_power_menu)
-        ),
-        iconTint =
-            Utils.getColorAttrDefaultColor(
-                qsThemedContext,
-                R.attr.onShadeActive,
+                R.drawable.ic_qs_lock_power_off,
+                ContentDescription.Resource(R.string.accessibility_quick_settings_power_menu)
             ),
-        backgroundColor = R.attr.shadeActive,
+            iconTint =
+                Utils.getColorStateListDefaultColor(
+                    qsThemedContext,
+                    R.color.qs_color_button_power,
+                ),
         onPowerButtonClicked,
     )
 }

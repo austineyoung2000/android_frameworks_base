@@ -232,11 +232,11 @@ public class QSIconViewImpl extends QSIconView {
      */
     private static int getIconColorForState(Context context, QSTile.State state) {
         if (state.disabledByPolicy || state.state == Tile.STATE_UNAVAILABLE) {
-            return Utils.getColorAttrDefaultColor(context, R.attr.outline);
+            return Utils.getColorStateListDefaultColor(context, R.color.qs_color_icon_unavailable);
         } else if (state.state == Tile.STATE_INACTIVE) {
-            return Utils.getColorAttrDefaultColor(context, R.attr.onShadeInactiveVariant);
+            return Utils.getColorStateListDefaultColor(context, R.color.qs_color_icon_inactive);
         } else if (state.state == Tile.STATE_ACTIVE) {
-            return Utils.getColorAttrDefaultColor(context, R.attr.onShadeActive);
+            return Utils.getColorStateListDefaultColor(context, R.color.qs_color_icon_active);
         } else {
             Log.e("QSIconView", "Invalid state " + state);
             return 0;

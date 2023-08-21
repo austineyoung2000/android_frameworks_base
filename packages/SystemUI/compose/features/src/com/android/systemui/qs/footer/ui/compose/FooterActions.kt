@@ -234,7 +234,7 @@ private fun IconButton(
     modifier: Modifier = Modifier,
 ) {
     Expandable(
-        color = colorAttr(model.backgroundColor),
+        color = Color.Transparent,
         shape = CircleShape,
         onClick = model.onClick,
         onLongClick = model.onLongClick,

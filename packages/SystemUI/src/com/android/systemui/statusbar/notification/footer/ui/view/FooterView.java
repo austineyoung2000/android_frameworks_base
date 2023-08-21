@@ -311,8 +311,8 @@ public class FooterView extends StackScrollerDecorView {
      */
     public void updateColors() {
         Resources.Theme theme = mContext.getTheme();
-        final @ColorInt int onSurface = Utils.getColorAttrDefaultColor(mContext,
-                com.android.internal.R.attr.materialColorOnSurface);
+        int onSurface =
+                Utils.getColorStateListDefaultColor(mContext, R.color.nf_color_button_text);
         final Drawable clearAllBg = theme.getDrawable(R.drawable.notif_footer_btn_background);
         final Drawable manageBg = theme.getDrawable(R.drawable.notif_footer_btn_background);
         final @ColorInt int scHigh = Utils.getColorAttrDefaultColor(mContext,

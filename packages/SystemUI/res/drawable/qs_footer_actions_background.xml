@@ -16,9 +16,7 @@
 <inset xmlns:android="http://schemas.android.com/apk/res/android">
     <shape>
         <solid android:color="@android:color/transparent"/>
-        <corners android:topLeftRadius="@dimen/qs_corner_radius"
-                 android:topRightRadius="@dimen/qs_corner_radius"
-                 android:bottomLeftRadius="@dimen/qs_corner_radius"
-                 android:bottomRightRadius="@dimen/qs_corner_radius"/>
+        <corners android:topLeftRadius="?android:attr/dialogCornerRadius"
+                 android:topRightRadius="?android:attr/dialogCornerRadius"/>
     </shape>
 </inset>

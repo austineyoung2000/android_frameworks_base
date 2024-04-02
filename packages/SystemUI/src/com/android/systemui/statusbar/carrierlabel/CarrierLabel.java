@@ -82,7 +82,7 @@ public class CarrierLabel extends TextView implements DarkReceiver {
             IntentFilter filter = new IntentFilter();
             filter.addAction(TelephonyManager.ACTION_SERVICE_PROVIDERS_UPDATED);
             filter.addAction(Intent.ACTION_CUSTOM_CARRIER_LABEL_CHANGED);
-            mContext.registerReceiver(mIntentReceiver, filter, null, getHandler());
+            mContext.registerReceiver(mIntentReceiver, filter, null, getHandler(), Context.RECEIVER_EXPORTED);
         }
         mContext.getContentResolver().registerContentObserver(Settings.System.getUriFor(
                 Settings.System.CUSTOM_CARRIER_LABEL), false, mObserver);

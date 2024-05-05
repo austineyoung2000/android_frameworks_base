@@ -388,12 +388,7 @@ class ActivityLaunchAnimator(
                     )
                 }
 
-                var animatedView = view;
-                if (view.getAnimatedView() is View) {
-                    view.getAnimatedView() as View
-                }
-
-                if (animatedView.parent !is ViewGroup) {
+                if (view.parent !is ViewGroup) {
                     Log.e(
                         TAG,
                         "Skipping animation as view $view is not attached to a ViewGroup",
@@ -402,7 +397,7 @@ class ActivityLaunchAnimator(
                     return null
                 }
 
-                return GhostedViewLaunchAnimatorController(animatedView, cujType)
+                return GhostedViewLaunchAnimatorController(view, cujType)
             }
         }
 

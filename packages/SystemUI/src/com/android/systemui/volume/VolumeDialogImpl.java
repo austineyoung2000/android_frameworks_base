@@ -471,16 +471,22 @@ public class VolumeDialogImpl implements VolumeDialog, Dumpable,
         final boolean isHalfOpen =
                 mDevicePosture == DevicePostureController.DEVICE_POSTURE_HALF_OPENED;
         final boolean isTabletop = isPortrait && isHalfOpen;
-        mOriginalGravity = mContext.getResources().getInteger(R.integer.volume_dialog_gravity);
-        if (!mShowActiveStreamOnly) {
-            // Clear the pre-defined gravity for left or right,
-            // this is handled by mVolumePanelOnLeft
-            mOriginalGravity &= ~(Gravity.LEFT | Gravity.RIGHT);
-            mOriginalGravity |= mVolumePanelOnLeft ? Gravity.LEFT : Gravity.RIGHT;
+        int origGravity = mContext.getResources().getInteger(R.integer.volume_dialog_gravity);
+        if (mOriginalGravity != origGravity) {
+            mOriginalGravity = origGravity;
+            if (!mShowActiveStreamOnly) {
+                // Clear the pre-defined gravity for left or right,
+                // this is handled by mVolumePanelOnLeft
+                mOriginalGravity &= ~(Gravity.LEFT | Gravity.RIGHT);
+                mOriginalGravity |= mVolumePanelOnLeft ? Gravity.LEFT : Gravity.RIGHT;
+            }
         }
         int gravity = isTabletop ? (mOriginalGravity | Gravity.TOP) : mOriginalGravity;
-        mWindowGravity = Gravity.getAbsoluteGravity(gravity,
-                mContext.getResources().getConfiguration().getLayoutDirection());
+        int windowGravity = Gravity.getAbsoluteGravity(gravity,
+                    mContext.getResources().getConfiguration().getLayoutDirection());
+        if (mWindowGravity != windowGravity) {
+            mWindowGravity = windowGravity;
+        }
     }
 
     @VisibleForTesting int getWindowGravity() {
@@ -2978,6 +2984,12 @@ public class VolumeDialogImpl implements VolumeDialog, Dumpable,
         public boolean dispatchTouchEvent(@NonNull MotionEvent ev) {
             rescheduleTimeoutH();
             return super.dispatchTouchEvent(ev);
+        }
+        
+        @Override 
+        public void show() {
+            adjustPositionOnScreen();
+            super.show();
         }
 
         @Override

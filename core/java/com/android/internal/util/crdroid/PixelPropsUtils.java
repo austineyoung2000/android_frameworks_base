@@ -130,9 +130,7 @@ public class PixelPropsUtils {
 
         if (Arrays.asList(packagesToSpoofAsMainlineDevice).contains(packageName) && !isExcludedProcess) {
             if (SystemProperties.getBoolean(SPOOF_PIXEL_GOOGLE_APPS, true)) {
-                if (!isMainlineDevice) {
-                    propsToChange.putAll(propsToChangeMainline);
-                }
+                propsToChange.putAll(propsToChangeMainline);
             }
         }
 
@@ -140,9 +138,7 @@ public class PixelPropsUtils {
             if (SystemProperties.getBoolean(SPOOF_PIXEL_GPHOTOS, true)) {
                 propsToChange.putAll(propsToChangePixelXL);
             } else {
-                if (!isMainlineDevice) {
-                    propsToChange.putAll(propsToChangePixel5a);
-                }
+                propsToChange.putAll(propsToChangeMainline);
             }
         }
         

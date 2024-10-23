@@ -842,7 +842,10 @@ public class ApplicationPackageManager extends PackageManager {
             "panther",
             "bluejay",
             "oriole",
-            "raven"
+            "raven",
+            "caiman",
+            "komodo",
+            "tokay"
     };
 
     private static final String[] featuresPixel = {

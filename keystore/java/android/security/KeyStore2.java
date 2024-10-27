@@ -33,7 +33,7 @@ import android.system.keystore2.KeyEntryResponse;
 import android.system.keystore2.ResponseCode;
 import android.util.Log;
 
-import com.android.internal.util.crdroid.AttestationHooks;
+import com.android.internal.util.crdroid.PixelPropsUtils;
 
 import java.util.Calendar;
 
@@ -286,12 +286,7 @@ public class KeyStore2 {
             throws KeyStoreException {
         StrictMode.noteDiskRead();
 
-        KeyEntryResponse response = handleRemoteExceptionWithRetry(service -> service.getKeyEntry(descriptor));
-        if (SystemProperties.getBoolean("persist.sys.pixelprops.gms", true)) {
-            return AttestationHooks.onGetKeyEntry(response);
-        } else {
-            return response;
-        }
+        return handleRemoteExceptionWithRetry((service) -> service.getKeyEntry(descriptor));
     }
 
     /**

@@ -842,7 +842,10 @@ public class ApplicationPackageManager extends PackageManager {
             "panther",
             "bluejay",
             "oriole",
-            "raven"
+            "raven",
+            "caiman",
+            "komodo",
+            "tokay"
     };
 
     private static final String[] featuresPixel = {
@@ -908,8 +911,12 @@ public class ApplicationPackageManager extends PackageManager {
         boolean isTensorDevice = Arrays.asList(pTensorCodenames).contains(deviceCodename);
 
         if (packageName != null) {
-            if (packageName.equals("com.google.android.googlequicksearchbox") || 
-                packageName.equals("com.google.android.apps.nexuslauncher")) {
+            if (packageName.equals("com.google.android.googlequicksearchbox")
+            || packageName.equals("com.google.android.apps.pixel.agent")
+            || packageName.equals("com.google.android.apps.pixel.creativeassistant")
+            || packageName.equals("com.google.android.dialer")
+            || packageName.equals("com.google.android.googlecamera")
+            || packageName.equals("com.google.android.apps.nexuslauncher")) {
                 if (containsAny(name, featuresPixel, featuresPixelOthers, featuresTensor, featuresNexus)) {
                     return true;
                 }
